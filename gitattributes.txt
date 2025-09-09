@@ -1,0 +1,10 @@
+# Ocultar el banco de preguntas en los diffs de GitHub
+preguntas.of.js linguist-generated=true -diff
+
+# (Opcional) si alguna vez generás versiones minificadas de JS/CSS, marcarlas como generadas
+*.min.js linguist-generated=true -diff
+*.min.css linguist-generated=true -diff
+
+# (Opcional) si exportás preguntas en JSON grandes, ocultarlos también
+*.json linguist-generated=true -diff
+

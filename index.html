@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choice de Farmacología 2 Cat 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Medidas de seguridad -->
+    <style>
+        /* Prevenir selección de texto */
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Permitir selección solo en inputs */
+        input, textarea {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+        
+        /* Ocultar en impresión */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- Menú Principal -->
+    <div id="menu-principal" class="menu-principal">
+        <h1>Choice de Farmacología 2 Cat 3</h1>
+                
+        <div class="container">
+            <!-- Primer Parcial -->
+            <div class="columna">
+                <h2>Primer Parcial</h2>
+                <ul>
+                    <li onclick="mostrarCuestionario('inotropicos')">Inotrópicos</li>
+                    <li onclick="mostrarCuestionario('diureticos')">Diuréticos</li>
+                    <li onclick="mostrarCuestionario('antiarrítmicos')">Antiarrítmicos y Antiaginosos</li>
+                    <li onclick="mostrarCuestionario('antihipertensivos')">Antihipertensivos</li>
+                    <li>Hemostasia
+                        <ul>
+                            <li onclick="mostrarCuestionario('antiagregantes')">Antiagregantes Plaquetarios</li>
+                            <li onclick="mostrarCuestionario('anticoagulantes')">Anticoagulantes</li>
+                            <li onclick="mostrarCuestionario('fibrinoliticos')">Fibrinolíticos</li>
+                        </ul>
+                    </li>
+                    <li onclick="mostrarCuestionario('hipolipemiantes')">Hipolipemiantes, Fibratos y Resinas de intercambio</li>
+                    <li onclick="mostrarCuestionario('primerparcial')">Primer Parcial</li>
+                    <li onclick="mostrarCuestionario('primerparcial_7_09_2023')">Primer Parcial 7-09-2023</li>
+                    <li onclick="mostrarCuestionario('primerparcial_11_09_2024')">Primer Parcial 11-09-2024</li>
+                    <li onclick="mostrarCuestionario('primerparcial_12_09_2024')">Primer Parcial 12-09-2024</li>
+                </ul>
+                
+            </div>
+            
+            <!-- Segundo Parcial -->
+            <div class="columna">
+                <h2>Segundo Parcial</h2>
+                <ul>
+                    <li>ATB
+                        <ul>
+                            <li onclick="mostrarCuestionario('generalidades_atb')">Generalidades de los ATB</li>
+                            <li onclick="mostrarCuestionario('quinolonas')">Quinolonas</li>
+                            <li>Inhibidores de la Síntesis de la Pared
+                                <ul>
+                                    <li>B-Lactámicos
+                                        <ul>
+                                            <li onclick="mostrarCuestionario('penicilinas')">Penicilinas</li>
+                                            <li onclick="mostrarCuestionario('cefalosporinas')">Cefalosporinas</li>
+                                            <li onclick="mostrarCuestionario('carbapenemos_y_monobactamicos')">Carbapenemos y Monobactámicos</li>
+                                            <li onclick="mostrarCuestionario('inhib_B_lactamasa')">Inhibidores de las B-Lactamasas</li>
+                                        </ul>
+                                    </li>
+                                    <li onclick="mostrarCuestionario('otros_inhibidores_sintesis_pared')">Otros Inhibidores: Glucopéptidos (Vancomicina, Teicoplanina), Fosfomicina, Cicloserina, Bacitracina, Daptomicina, Colistín</li>
+                                </ul>
+                            </li>
+                            <li>Inhibidores de la Síntesis de Proteínas
+                                <ul>
+                                    <li onclick="mostrarCuestionario('aminoglucosidos')">Aminoglucósidos</li>
+                                    <li onclick="mostrarCuestionario('tetraciclinas')">Tetraciclinas</li>
+                                    <li onclick="mostrarCuestionario('macrolidos')">Macrólidos</li>
+                                    <li onclick="mostrarCuestionario('otros_inhibidores_sintesis_proteinas')">Otros: Espectinomicina, Cloranfenicol, Lincosamindas (Clindamicina), Linezolid</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="mostrarCuestionario('antiparasitarios')">Antiparasitarios</li>
+                    <li onclick="mostrarCuestionario('antimicoticos')">Antimicóticos (Antifúngicos)</li>
+                    <li onclick="mostrarCuestionario('antituberculosos')">Antituberculosos</li>
+                    <li onclick="mostrarCuestionario('antivirales')">Antivirales</li>
+                    <li onclick="mostrarCuestionario('antineoplasicos')">Antineoplásicos e Inmunosupresores</li>
+                    <li onclick="mostrarCuestionario('segundoparcial_24_5_2024')">Segundo Parcial 24_5_2024</li>
+                    <li onclick="mostrarCuestionario('segundoparcial_29_5_2024')">Segundo Parcial 29_5_2024</li>
+                    <li onclick="mostrarCuestionario('segundoparcial_2024')">Segundo Parcial 2024</li>
+                    <li onclick="mostrarCuestionario('segundoparcial')">Segundo Parcial</li>
+                    <li onclick="mostrarCuestionario('segundoparcial1')">Segundo Parcial1</li>
+                </ul>
+            </div>
+            
+            <!-- Tercer Parcial -->
+            <div class="columna">
+                <h2>Tercer Parcial</h2>
+                <ul>
+                    <li onclick="mostrarCuestionario('antisicoticos')">Antisicóticos</li>
+                    <li onclick="mostrarCuestionario('antiparkinsonianos')">Antiparkinsonianos</li>
+                    <li onclick="mostrarCuestionario('antidepresivos')">Antidepresivos</li>
+                    <li onclick="mostrarCuestionario('litio')">Litio</li>
+                    <li onclick="mostrarCuestionario('ansioliticos')">Hiponóticos y Ansiolíticos</li>
+                    <li onclick="mostrarCuestionario('anticonvulsivantes')">Anticonvulsivantes (Antiepilépticos)</li>
+                    <li onclick="mostrarCuestionario('digestivo')">Digestivo</li>
+                    <li onclick="mostrarCuestionario('respiratorio')">Respiratorio</li>
+                    <li onclick="mostrarCuestionario('tercerparcial_2024')">Tercer parcial 2024</li>
+                    <li onclick="mostrarCuestionario('tercerparcial_27_6_2024')">Tercer parcial 27_6_2024</li>
+                    <li onclick="mostrarCuestionario('tercerparcial_23_11_2023')">Tercer parcial 23_11_2023</li>
+                    <li onclick="mostrarCuestionario('tercerparcial_29_6_2023')">Tercer parcial 29_6_2023</li>
+                    <li>FINALES
+                        <ul>
+                            <li onclick="mostrarCuestionario('final_22_11_2023')">Final 22_11_2023</li> 
+                            <li onclick="mostrarCuestionario('final_20_09_2023')">Final 20_09_2023</li> 
+                            <li onclick="mostrarCuestionario('final_10_07_2023')">Final 10_07_2023</li> 
+                            <li onclick="mostrarCuestionario('final_17_07_2024')">Final  17_07_2024</li> 
+                            <li onclick="mostrarCuestionario('final_10_07_2024')">Final  10_07_2024</li>          
+                        </ul>
+                    <li onclick="mostrarCuestionario('examenlibre')">Examen Libre</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="info-extra">
+            <p>Para sugerencias y correcciones comunicarse por favor con <a href="mailto:farmaco2cat3choice@gmail.com">farmaco2cat3choice@gmail.com</a></p>
+            <p>Última actualización: 08/09/2025</p>
+        </div>
+
+    </div>
+
+    <!-- TODOS LOS CUESTIONARIOS -->
+    <!-- Cuestionario de Inotrópicos -->
+    <div id="inotropicos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Inotrópicos</h1>
+        <div id="cuestionario-inotropicos"></div>
+        <button id="mostrar-total-inotropicos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-inotropicos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+<!-- Cuestionario de Diuréticos -->
+    <div id="diureticos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Diuréticos</h1>
+        <div id="cuestionario-diureticos"></div>
+        <button id="mostrar-total-diureticos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-diureticos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+
+    <!-- Cuestionario de Antiarrítmicos -->
+    <div id="antiarrítmicos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antiarrítmicos</h1>
+        <div id="cuestionario-antiarrítmicos"></div>
+        <button id="mostrar-total-antiarrítmicos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antiarrítmicos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Antihipertensivos -->
+    <div id="antihipertensivos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antiagregantes Antihipertensivos</h1>
+        <div id="cuestionario-antihipertensivos"></div>
+        <button id="mostrar-total-antihipertensivos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antihipertensivos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Antiagregantes -->
+    <div id="antiagregantes" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antiagregantes Plaquetarios</h1>
+        <div id="cuestionario-antiagregantes"></div>
+        <button id="mostrar-total-antiagregantes">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antiagregantes" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Ancoagualantes -->
+    <div id="anticoagulantes" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Anticoagulantes</h1>
+        <div id="cuestionario-anticoagulantes"></div>
+        <button id="mostrar-total-anticoagulantes">Mostrar Puntuación Total</button>
+        <div id="resultado-total-anticoagulantes" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Fibrinolíticos -->
+    <div id="fibrinoliticos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Fibrinolíticos</h1>
+        <div id="cuestionario-fibrinoliticos"></div>
+        <button id="mostrar-total-fibrinoliticos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-fibrinoliticos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+
+    <!-- Cuestionario de Hipolipemiantes -->
+    <div id="hipolipemiantes" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Hipolipemiantes</h1>
+        <div id="cuestionario-hipolipemiantes"></div>
+        <button id="mostrar-total-hipolipemiantes">Mostrar Puntuación Total</button>
+        <div id="resultado-total-hipolipemiantes" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Primer Parcial -->
+    <div id="primerparcial" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Primer Parcial</h1>
+        <div id="cuestionario-primerparcial"></div>
+        <button id="mostrar-total-primerparcial">Mostrar Puntuación Total</button>
+        <div id="resultado-total-primerparcial" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Primer Parcial 7-09-2023 -->
+    <div id="primerparcial_7_09_2023" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Primer Parcial 7-09-2023</h1>
+        <div id="cuestionario-primerparcial_7_09_2023"></div>
+        <button id="mostrar-total-primerparcial_7_09_2023">Mostrar Puntuación Total</button>
+        <div id="resultado-total-primerparcial_7_09_2023" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Primer Parcial 11-09-2024 -->
+    <div id="primerparcial_11_09_2024" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Primer Parcial 11-09-2024</h1>
+        <div id="cuestionario-primerparcial_11_09_2024"></div>
+        <button id="mostrar-total-primerparcial_11_09_2024">Mostrar Puntuación Total</button>
+        <div id="resultado-total-primerparcial_11_09_2024" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Primer Parcial 12-09-2024 -->
+    <div id="primerparcial_12_09_2024" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Primer Parcial 12-09-2024</h1>
+        <div id="cuestionario-primerparcial_12_09_2024"></div>
+        <button id="mostrar-total-primerparcial_12_09_2024">Mostrar Puntuación Total</button>
+        <div id="resultado-total-primerparcial_12_09_2024" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Generalidades ATB -->
+    <div id="generalidades_atb" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Generalidades de ATB</h1>
+        <div id="cuestionario-generalidades_atb"></div>
+        <button id="mostrar-total-generalidades_atb">Mostrar Puntuación Total</button>
+        <div id="resultado-total-generalidades_atb" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+    
+    <!-- Cuestionario de Quinolonas -->
+    <div id="quinolonas" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Quinolonas</h1>
+        <div id="cuestionario-quinolonas"></div>
+        <button id="mostrar-total-quinolonas">Mostrar Puntuación Total</button>
+        <div id="resultado-total-quinolonas" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Penicilinas-->
+    <div id="penicilinas" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Penicilinas</h1>
+        <div id="cuestionario-penicilinas"></div>
+        <button id="mostrar-total-penicilinas">Mostrar Puntuación Total</button>
+        <div id="resultado-total-penicilinas" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Cefalosporinas -->
+    <div id="cefalosporinas" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Cefalosporinas</h1>
+        <div id="cuestionario-cefalosporinas"></div>
+        <button id="mostrar-total-cefalosporinas">Mostrar Puntuación Total</button>
+        <div id="resultado-total-cefalosporinas" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Carbapenemos y Monobactámicos -->
+    <div id="carbapenemos_y_monobactamicos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Carbapenemos y Monobactámicos</h1>
+        <div id="cuestionario-carbapenemos_y_monobactamicos"></div>
+        <button id="mostrar-total-carbapenemos_y_monobactamicos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-carbapenemos_y_monobactamicos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Monobactámicos -->
+    <div id="monobactamicos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Monobactámicos</h1>
+        <div id="cuestionario-monobactamicos"></div>
+        <button id="mostrar-total-monobactamicos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-monobactamicos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Inhibididores de la B Lactamasa -->
+    <div id="inhib_B_lactamasa" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Inhibididores de la B Lactamasa</h1>
+        <div id="cuestionario-inhib_B_lactamasa"></div>
+        <button id="mostrar-total-inhib_B_lactamasa">Mostrar Puntuación Total</button>
+        <div id="resultado-total-inhib_B_lactamasa" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Otros Inhibidores de la Síntesis de Pared -->
+    <div id="otros_inhibidores_sintesis_pared" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Otros Inhibidores de la Síntesis de Pared</h1>
+        <div id="cuestionario-otros_inhibidores_sintesis_pared"></div>
+        <button id="mostrar-total-otros_inhibidores_sintesis_pared">Mostrar Puntuación Total</button>
+        <div id="resultado-total-otros_inhibidores_sintesis_pared" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Aminoglucósidos -->
+    <div id="aminoglucosidos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Aminoglucósidos</h1>
+        <div id="cuestionario-aminoglucosidos"></div>
+        <button id="mostrar-total-aminoglucosidos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-aminoglucosidos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+ <!-- Cuestionario de Tetraciclinas -->
+    <div id="tetraciclinas" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Tetraciclinas</h1>
+        <div id="cuestionario-tetraciclinas"></div>
+        <button id="mostrar-total-tetraciclinas">Mostrar Puntuación Total</button>
+        <div id="resultado-total-tetraciclinas" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+ <!-- Cuestionario de Macrólidos -->
+    <div id="macrolidos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Macrólidos</h1>
+        <div id="cuestionario-macrolidos"></div>
+        <button id="mostrar-total-macrolidos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-macrolidos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+ <!-- Cuestionario de Otros: Espectinomicina, Cloranfenicol, Lincosamindas (Clindamicina), Linezolid -->
+    <div id="otros_inhibidores_sintesis_proteinas" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Otros: Espectinomicina, Cloranfenicol, Lincosamindas (Clindamicina), Linezolid</h1>
+        <div id="cuestionario-otros_inhibidores_sintesis_proteinas"></div>
+        <button id="mostrar-total-otros_inhibidores_sintesis_proteinas">Mostrar Puntuación Total</button>
+        <div id="resultado-total-otros_inhibidores_sintesis_proteinas" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Antiparasitarios -->
+    <div id="antiparasitarios" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antiparasitarios</h1>
+        <div id="cuestionario-antiparasitarios"></div>
+        <button id="mostrar-total-antiparasitarios">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antiparasitarios" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+    
+    <!-- Cuestionario de Antimicóticos -->
+    <div id="antimicoticos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antimicóticos</h1>
+        <div id="cuestionario-antimicoticos"></div>
+        <button id="mostrar-total-antimicoticos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antimicoticos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Antituberculosos -->
+    <div id="antituberculosos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antituberculosos</h1>
+        <div id="cuestionario-antituberculosos"></div>
+        <button id="mostrar-total-antituberculosos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antituberculosos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Antivirales-->
+    <div id="antivirales" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antivirales</h1>
+        <div id="cuestionario-antivirales"></div>
+        <button id="mostrar-total-antivirales">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antivirales" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Antineoplásico e imunosupresores -->
+    <div id="antineoplasicos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antineoplásico e Imunosupresores</h1>
+        <div id="cuestionario-antineoplasicos"></div>
+        <button id="mostrar-total-antineoplasicos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antineoplasicos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Segundo parcial_24_5_2024 -->
+    <div id="segundoparcial_24_5_2024" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Segundo parcial 24_5_2024</h1>
+        <div id="cuestionario-segundoparcial_24_5_2024"></div>
+        <button id="mostrar-total-segundoparcial_24_5_2024">Mostrar Puntuación Total</button>
+        <div id="resultado-total-segundoparcial_24_5_2024" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Segundo parcial 29_5_2024 -->
+    <div id="segundoparcial_29_5_2024" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Segundo parcial 29_5_2024</h1>
+        <div id="cuestionario-segundoparcial_29_5_2024"></div>
+        <button id="mostrar-total-segundoparcial_29_5_2024">Mostrar Puntuación Total</button>
+        <div id="resultado-total-segundoparcial_29_5_2024" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Segundo parcial_2024 -->
+    <div id="segundoparcial_2024" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Segundo parcial_2024</h1>
+        <div id="cuestionario-segundoparcial_2024"></div>
+        <button id="mostrar-total-segundoparcial_2024">Mostrar Puntuación Total</button>
+        <div id="resultado-total-segundoparcial_2024" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Segundo parcial -->
+    <div id="segundoparcial" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Segundo parcial</h1>
+        <div id="cuestionario-segundoparcial"></div>
+        <button id="mostrar-total-segundoparcial">Mostrar Puntuación Total</button>
+        <div id="resultado-total-segundoparcial" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+     <!-- Cuestionario de Segundo parcial1 -->
+    <div id="segundoparcial1" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Segundo parcial1</h1>
+        <div id="cuestionario-segundoparcial1"></div>
+        <button id="mostrar-total-segundoparcial1">Mostrar Puntuación Total</button>
+        <div id="resultado-total-segundoparcial1" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Antisicóticos -->
+    <div id="antisicoticos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antisicóticos</h1>
+        <div id="cuestionario-antisicoticos"></div>
+        <button id="mostrar-total-antisicoticos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antisicoticos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Antiparkinsonianos -->
+    <div id="antiparkinsonianos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antiparkinsonianos</h1>
+        <div id="cuestionario-antiparkinsonianos"></div>
+        <button id="mostrar-total-antiparkinsonianos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antiparkinsonianos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Antidepresivos -->
+    <div id="antidepresivos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Antidepresivos</h1>
+        <div id="cuestionario-antidepresivos"></div>
+        <button id="mostrar-total-antidepresivos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-antidepresivos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+        <!-- Cuestionario de Litio -->
+    <div id="litio" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Litio</h1>
+        <div id="cuestionario-litio"></div>
+        <button id="mostrar-total-litio">Mostrar Puntuación Total</button>
+        <div id="resultado-total-litio" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Ansiolíticos -->
+    <div id="ansioliticos" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Ansiolíticos</h1>
+        <div id="cuestionario-ansioliticos"></div>
+        <button id="mostrar-total-ansioliticos">Mostrar Puntuación Total</button>
+        <div id="resultado-total-ansioliticos" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Anticonvulsivantes -->
+    <div id="anticonvulsivantes" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Anticonvulsivantes</h1>
+        <div id="cuestionario-anticonvulsivantes"></div>
+        <button id="mostrar-total-anticonvulsivantes">Mostrar Puntuación Total</button>
+        <div id="resultado-total-anticonvulsivantes" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Digestivo -->
+    <div id="digestivo" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Digestivo</h1>
+        <div id="cuestionario-digestivo"></div>
+        <button id="mostrar-total-digestivo">Mostrar Puntuación Total</button>
+        <div id="resultado-total-digestivo" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Respiratorio -->
+    <div id="respiratorio" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Respiratorio</h1>
+        <div id="cuestionario-respiratorio"></div>
+        <button id="mostrar-total-respiratorio">Mostrar Puntuación Total</button>
+        <div id="resultado-total-respiratorio" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Tercer parcial_2024 -->
+    <div id="tercerparcial_2024" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Tercer parcial 2024 </h1>
+        <div id="cuestionario-tercerparcial_2024"></div>
+        <button id="mostrar-total-tercerparcial_2024">Mostrar Puntuación Total</button>
+        <div id="resultado-total-tercerparcial_2024" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+   
+    <!-- Cuestionario de Tercer Parcial 27_6_2024-->
+    <div id="tercerparcial_27_6_2024" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Tercer Parcial 27_6_2024 </h1>
+        <div id="cuestionario-tercerparcial_27_6_2024"></div>
+        <button id="mostrar-total-tercerparcial_27_6_2024">Mostrar Puntuación Total</button>
+        <div id="resultado-total-tercerparcial_27_6_2024" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Tercer Parcial 23_11_2023 -->
+    <div id="tercerparcial_23_11_2023" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Tercer Parcial 23_11_2023 </h1>
+        <div id="cuestionario-tercerparcial_23_11_2023"></div>
+        <button id="mostrar-total-tercerparcial_23_11_2023">Mostrar Puntuación Total</button>
+        <div id="resultado-total-tercerparcial_23_11_2023" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Tercer Parcial 29_6_2023 -->
+    <div id="tercerparcial_29_6_2023" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Tercer Parcial 29_6_2023  </h1>
+        <div id="cuestionario-tercerparcial_29_6_2023"></div>
+        <button id="mostrar-total-ttercerparcial_29_6_2023">Mostrar Puntuación Total</button>
+        <div id="resultado-total-tercerparcial_29_6_2023" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Final 22_11_2023 -->
+    <div id="final_22_11_2023" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Final 22_11_2023  </h1>
+        <div id="cuestionario-final_22_11_2023"></div>
+        <button id="mostrar-total-final_22_11_2023">Mostrar Puntuación Total</button>
+        <div id="resultado-total-final_22_11_2023" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Final 20_09_2023 -->
+    <div id="final_20_09_2023" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Final 20_09_2023 </h1>
+        <div id="cuestionario-final_20_09_2023"></div>
+        <button id="mostrar-total-final_20_09_2023">Mostrar Puntuación Total</button>
+        <div id="resultado-total-final_20_09_2023" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Final 10_07_2023 -->
+    <div id="final_10_07_2023" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Final 10_07_2023 </h1>
+        <div id="cuestionario-final_10_07_2023"></div>
+        <button id="mostrar-total-final_10_07_2023">Mostrar Puntuación Total</button>
+        <div id="resultado-total-final_10_07_2023" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Final 17_07_2024 -->
+    <div id="final_17_07_2024" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Final 17_07_2024  </h1>
+        <div id="cuestionario-final_17_07_2024"></div>
+        <button id="mostrar-total-final_17_07_2024">Mostrar Puntuación Total</button>
+        <div id="resultado-total-final_17_07_2024" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+    <!-- Cuestionario de Final 10_07_2024 -->
+    <div id="final_10_07_2024" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Tercer parcial 2024 </h1>
+        <div id="cuestionario-final_10_07_2024"></div>
+        <button id="mostrar-total-final_10_07_2024">Mostrar Puntuación Total</button>
+        <div id="resultado-total-final_10_07_2024" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+
+        <!-- Cuestionario de Examen Libre -->
+    <div id="examenlibre" class="pagina-cuestionario">
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+        <h1>Cuestionario Interactivo - Examen Libre </h1>
+        <div id="cuestionario-examenlibre"></div>
+        <button id="mostrar-total-examenlibre">Mostrar Puntuación Total</button>
+        <div id="resultado-total-examenlibre" class="resultado-final"></div>
+        <button class="btn-volver" onclick="volverAlMenu()">← Volver al Menú Principal</button>
+    </div>
+    
+
+
+    <script src="preguntas.of.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Medidas de seguridad adicionales
+        
+        // 1. Prevenir clic derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // 2. Prevenir atajos de teclado peligrosos
+        document.addEventListener('keydown', function(e) {
+            // Prevenir F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S, Ctrl+P
+            if (e.keyCode === 123 || // F12
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // DevTools
+                (e.ctrlKey && e.keyCode === 85) || // Ver código fuente
+                (e.ctrlKey && e.keyCode === 83) || // Guardar
+                (e.ctrlKey && e.keyCode === 80) || // Imprimir
+                (e.ctrlKey && e.keyCode === 65)) { // Seleccionar todo
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 3. Detectar herramientas de desarrollo
+        let devtools = {open: false, orientation: null};
+        setInterval(function() {
+            if (window.outerHeight - window.innerHeight > 160 || 
+                window.outerWidth - window.innerWidth > 160) {
+                if (!devtools.open) {
+                    devtools.open = true;
+                    alert('Por favor, cierre las herramientas de desarrollo para continuar.');
+                    window.location.reload();
+                }
+            } else {
+                devtools.open = false;
+            }
+        }, 500);
+
+        // 4. Prevenir drag and drop
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // 5. Detectar intentos de inspección
+        document.addEventListener('selectstart', function(e) {
+            if (!e.target.matches('input, textarea')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 6. Prevenir impresión con CSS y JS
+        window.addEventListener('beforeprint', function(e) {
+            e.preventDefault();
+            alert('La impresión no está permitida en esta aplicación.');
+            return false;
+        });
+
+        
+        // 8. Ofuscar código en consola
+        console.log('%cADVERTENCIA!', 'color: red; font-size: 50px; font-weight: bold;');
+        console.log('%cEsta función del navegador está destinada a desarrolladores. Si alguien te pidió copiar y pegar algo aquí, es una estafa.', 'color: red; font-size: 16px;');
+        
+        // Limpiar consola periódicamente
+        setInterval(function() {
+            console.clear();
+        }, 3000);
+    </script>
+</body>
+</html>
